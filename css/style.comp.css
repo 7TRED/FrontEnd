@@ -80,7 +80,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.7;
   color: #ece8e8;
-  background-color: #525252; }
+  background-color: #313131; }
 
 .heading-primary {
   text-transform: uppercase;
@@ -263,15 +263,16 @@ body {
 
 .bg-picture {
   position: fixed;
-  top: 0;
+  top: -10%;
   left: 0;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   z-index: -2;
   opacity: 1;
   background-image: url("../img/Earth.png");
   background-position: bottom;
-  background-size: cover; }
+  background-size: contain;
+  background-repeat: no-repeat; }
 
 .card {
   perspective: 150rem;
