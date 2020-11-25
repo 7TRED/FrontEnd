@@ -1,0 +1,141 @@
+.card {
+	// Functionality
+	perspective: 150rem;
+	-moz-perspective: 150rem;
+	position: relative;
+	padding: 4rem;
+	height: 53rem;
+
+	&__side {
+		height: 53rem;
+		transition: all 1s ease;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		backface-visibility: hidden;
+		border-radius: 1rem;
+		box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+		overflow: hidden;
+
+		&--front {
+			background-color: $color-white;
+		}
+
+		&--back {
+			transform: rotateY(180deg);
+
+			&-1 {
+				background: linear-gradient(to bottom right, $color-main-light, $color-main);
+			}
+			&-2 {
+				background: linear-gradient(to bottom right, $color-green-light, $color-green-dark);
+			}
+			&-3 {
+				background: linear-gradient(to bottom right, $color-primary, $color-secondary);
+			}
+		}
+	}
+
+	&:hover &__side--front {
+		transform: rotateY(180deg);
+	}
+
+	&:hover &__side--back {
+		transform: rotateY(360deg);
+	}
+
+	// Front Side Styling
+	&__picture {
+		background-size: cover;
+		background-position: center;
+		height: 23rem;
+		clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+		background-blend-mode: soft-light;
+		border-top-left-radius: 3px;
+
+		&--1 {
+			background-image: linear-gradient(to bottom right, $color-main-light, $color-main),
+				url("../img/pillarsofcreation.jpg");
+		}
+		&--2 {
+			background-image: linear-gradient(to bottom right, $color-green-light, $color-green-dark),
+				url("../img/helixNebula.jpg");
+		}
+		&--3 {
+			background-image: linear-gradient(to bottom right, $color-primary, $color-secondary),
+				url("../img/catseye.jpg");
+		}
+	}
+
+	&__heading {
+		font-size: 2.8rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		color: $color-white;
+		text-align: right;
+		position: absolute;
+		top: 14rem;
+		right: 2rem;
+		width: 60%;
+	}
+
+	&__heading-span {
+		padding: .72rem;
+		-webkit-box-decoration-break: clone;
+		box-decoration-break: clone;
+		&--1 {
+			background: linear-gradient(to bottom right, rgba($color-main-light, .9), rgba($color-main, .9));
+		}
+		&--2 {
+			background: linear-gradient(to bottom right, rgba($color-green-light, .9), rgba($color-green-dark, .9));
+		}
+		&--3 {
+			background: linear-gradient(to bottom right, rgba($color-primary, .9), rgba($color-secondary, .9));
+		}
+	}
+
+	&__details {
+		padding: 3rem;
+		ul {
+			list-style: none;
+			width: 80%;
+			color: $color-grey-dark;
+			margin: 0 auto;
+
+			li {
+				text-align: center;
+				font-size: 1.5rem;
+				padding: 1rem;
+
+				&:not(:last-child) {
+					border-bottom: 2px solid $color-grey-2;
+				}
+			}
+		}
+	}
+
+	&__cta {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 80%;
+		text-align: center;
+	}
+
+	&__price-box {
+		text-align: center;
+		margin-bottom: 12rem;
+	}
+
+	&__price-only {
+		font-size: 1.4rem;
+		text-transform: uppercase;
+	}
+
+	&__price-value {
+		font-size: 6rem;
+		font-weight: 100;
+	}
+}
